@@ -1,0 +1,20 @@
+# 默认按 LF 存储，检出时由各平台决定（避免 CRLF 污染 diff）
+* text=auto eol=lf
+
+# 明确 LF
+*.js    text eol=lf
+*.mjs   text eol=lf
+*.json  text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+*.md    text eol=lf
+
+# Windows 脚本保留 CRLF
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+
+# 二进制
+*.png   binary
+*.jpg   binary
+*.ico   binary
+*.zip   binary

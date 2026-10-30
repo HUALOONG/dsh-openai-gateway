@@ -1,0 +1,35 @@
+# 依赖
+node_modules/
+.pnpm-store/
+pnpm-lock.yaml
+
+# 日志与临时产物
+*.log
+logs/
+npm-debug.log*
+yarn-error.log*
+.cache/
+.tmp/
+tmp/
+
+# 本地配置与密钥（禁止入库）
+.env
+.env.*
+!.env.example
+*.local
+*.secret
+keys.json
+secrets.json
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 构建产物
+dist/
+build/
+*.tgz

@@ -1,0 +1,42 @@
+{
+  "name": "@joyin/dsh-openai-gateway",
+  "version": "0.1.0",
+  "description": "DSH 桌面插件：把 DSH 已配置的模型以 OpenAI 兼容 API 暴露给第三方系统，并提供 /v1/info 显示监听端口与运行状态。",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "gateway.js",
+    "providers.js",
+    "auth.js",
+    "util.js",
+    "cordis.patch.yml",
+    "README.md",
+    "manage.mjs"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "install:plugin": "node manage.mjs install",
+    "uninstall:plugin": "node manage.mjs uninstall",
+    "status": "node manage.mjs status",
+    "info": "node manage.mjs info"
+  },
+  "author": "JoyinCode",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "openai",
+    "gateway",
+    "plugin",
+    "joyincode"
+  ]
+}

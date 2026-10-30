@@ -1,0 +1,14 @@
+# cordis.patch.yml —— 把本插件挂进 DSH 的插件树。
+# 声明 dsh.bundle.patch 后，`dsh plugin add` 会把它加入 profiles/web 的
+# dsh.profile.bundles，DSH 启动时据此加载。
+- insert:
+    - id: dsh-openai-gateway
+      name: '@joyin/dsh-openai-gateway'
+      inject: [webServer, settings, credentials, llm]
+      config:
+        # 固定端口别名：插件内再监听这个端口，与 DSH 动态端口共享同一套 /v1 处理器。
+        # 设为 0 可关闭（退化为仅使用 DSH 动态端口）。
+        fixedPort: 9527
+        # 是否要求 Bearer 密钥（默认 true）。仅本机调试时可置 false。
+        requireKeyForChat: true
+        requireKeyForModels: true
